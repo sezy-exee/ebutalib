@@ -4,27 +4,65 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- Primary SEO Meta Tags -->
-<title>NFC & QR Stalci za Google Recenzije | Lokalni Rast</title>
-<meta name="title" content="NFC & QR Stalci za Google Recenzije | Lokalni Rast" />
-<meta name="description" content="Skupite više 5★ Google recenzija jednim dodirom telefona. Akrilni stalci sa NFC čipom i QR kodom bez pretplate i bez dodatnih troškova. Brza dostava." />
-<meta name="keywords" content="NFC stalci za recenzije, Google recenzije stalak, NFC kartica recenzije, Google Maps recenzije, akrilni stalak QR, lokalni SEO" />
+<!-- Primary On-Page SEO Meta Tags -->
+<title>NFC & QR Stalci za Google Recenzije | Povećajte Ocjene na Google Maps - Lokalni Rast</title>
+<meta name="title" content="NFC & QR Stalci za Google Recenzije | Povećajte Ocjene na Google Maps - Lokalni Rast" />
+<meta name="description" content="Privucite više 5★ Google recenzija jednim dodirom telefona. Pametni akrilni stalci sa NFC čipom i QR kodom za restorane, kafiće i salone. Jednokratna kupovina 35 KM, bez pretplate!" />
+<meta name="keywords" content="NFC stalci za recenzije, Google recenzije stalak, NFC kartica recenzije, Google Maps recenzije, kako dobiti vise google ocjena, google my business recenzije, akrilni stalak QR, lokalni SEO sarajevo bih, pametni stalak za ocjene, google review kartica, ocjene za restorane i salone" />
 <meta name="robots" content="index, follow" />
 <meta name="author" content="Lokalni Rast" />
+<link rel="canonical" href="https://lokalnirast.vercel.app/" />
 
 <!-- Open Graph / Facebook / WhatsApp / Viber -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://lokalnirast.netlify.app/" />
+<meta property="og:url" content="https://lokalnirast.vercel.app/" />
 <meta property="og:title" content="NFC & QR Stalci za Google Recenzije | Lokalni Rast" />
-<meta property="og:description" content="Privucite više mušterija i skupljajte 5★ Google recenzije u samo 3 sekunde. Jednokratna kupovina, bez pretplate." />
-<meta property="og:image" content="https://lokalnirast.netlify.app/stalak.jpg" />
+<meta property="og:description" content="Skupite više 5★ Google recenzija u samo 3 sekunde. Jednokratna kupovina bez mjesečne pretplate. Brza dostava i garancija." />
+<meta property="og:image" content="https://lokalnirast.vercel.app/stalak.jpg" />
 
 <!-- Twitter Cards -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://lokalnirast.netlify.app/" />
+<meta property="twitter:url" content="https://lokalnirast.vercel.app/" />
 <meta property="twitter:title" content="NFC & QR Stalci za Google Recenzije | Lokalni Rast" />
-<meta property="twitter:description" content="Privucite više mušterija i skupljajte 5★ Google recenzije u samo 3 sekunde. Jednokratna kupovina, bez pretplate." />
-<meta property="twitter:image" content="https://lokalnirast.netlify.app/stalak.jpg" />
+<meta property="twitter:description" content="Skupite više 5★ Google recenzija u samo 3 sekunde. Jednokratna kupovina bez mjesečne pretplate." />
+<meta property="twitter:image" content="https://lokalnirast.vercel.app/stalak.jpg" />
+
+<!-- Schema.org Structured Data (Google Rich Snippets) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "NFC & QR Stalak za Google Recenzije",
+  "image": [
+    "https://lokalnirast.vercel.app/stalak.jpg",
+    "https://lokalnirast.vercel.app/stalak-2.png"
+  ],
+  "description": "Akrilni stalak opremljen NFC tehnologijom i QR kodom za brzo prikupljanje pozitivnih 5 zvjezdica Google recenzija za restorane, salone i prodavnice.",
+  "sku": "LR-NFC-STAND-01",
+  "brand": {
+    "@type": "Brand",
+    "name": "Lokalni Rast"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://lokalnirast.vercel.app/",
+    "priceCurrency": "BAM",
+    "price": "35.00",
+    "priceValidUntil": "2027-12-31",
+    "itemCondition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "Lokalni Rast"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "48"
+  }
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,9 +74,9 @@
     --muted:#5F5C55;
     --line:#E6E3DC;
     --card:#FFFFFF;
-    --accent:#1A7A46;      /* zelena recenzija */
+    --accent:#1A7A46;      
     --accent-ink:#0E4A2A;
-    --yellow:#F5B301;      /* zvjezdice */
+    --yellow:#F5B301;      
     --radius:14px;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -54,7 +92,7 @@
   .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
   a{color:inherit;text-decoration:none;}
 
-  /* ---------- top traka ---------- */
+  /* Topbar */
   .topbar{
     background:var(--ink);color:#F3F1EA;
     font-size:13px;font-weight:500;letter-spacing:.02em;
@@ -63,7 +101,7 @@
   .topbar span b{color:#fff;font-weight:600;}
   .topbar .dot{opacity:.4;}
 
-  /* ---------- header ---------- */
+  /* Header */
   header{
     position:sticky;top:0;z-index:50;
     background:rgba(250,249,246,.88);
@@ -90,7 +128,7 @@
   .btn-green{background:var(--accent);color:#fff;}
   .btn-green:hover{background:var(--accent-ink);}
 
-  /* ---------- hero ---------- */
+  /* Hero Section */
   .hero{padding:88px 0 72px;}
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;}
   .eyebrow{
@@ -116,7 +154,7 @@
   .hero-facts b{display:block;font-size:22px;font-weight:700;letter-spacing:-.02em;}
   .hero-facts span{font-size:13px;color:var(--muted);}
 
-  /* ---------- product mockup ---------- */
+  /* Stage / Product Visuals */
   .stage{position:relative;}
   .stage-bg{
     position:absolute;inset:8% -4% 4% -4%;background:#F0EDE6;border-radius:24px;z-index:0;
@@ -135,15 +173,15 @@
   .chip-2{bottom:16%;right:0;}
   .chip-1 svg,.chip-2 svg{color:var(--accent);}
 
-  /* ---------- marquee ---------- */
+  /* Marquee */
   .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--card);overflow:hidden;padding:15px 0;}
   .marquee-track{display:flex;gap:56px;width:max-content;animation:scroll 26s linear infinite;font-size:13.5px;font-weight:600;color:var(--muted);white-space:nowrap;}
   @keyframes scroll{to{transform:translateX(-50%);}}
   .marquee-track i{font-style:normal;color:var(--accent);}
 
-  /* ---------- sections ---------- */
+  /* Sections */
   section.block{padding:88px 0;}
-  .sec-head{max-width:620px;margin-bottom:52px;}
+  .sec-head{max-width:640px;margin-bottom:52px;}
   .sec-kicker{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:14px;}
   h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(30px,3.6vw,42px);line-height:1.12;letter-spacing:-.015em;}
   .sec-sub{margin-top:14px;color:var(--muted);font-size:17px;}
@@ -157,7 +195,7 @@
   .feature h3{font-size:17px;font-weight:600;margin:38px 0 8px;letter-spacing:-.01em;}
   .feature p{font-size:14.5px;color:var(--muted);}
 
-  /* ---------- kako radi ---------- */
+  /* Kako Radi */
   .steps{border-top:1px solid var(--line);}
   .step{
     display:grid;grid-template-columns:80px 1fr 1.2fr;gap:32px;align-items:baseline;
@@ -167,7 +205,7 @@
   .step h3{font-size:19px;font-weight:600;letter-spacing:-.01em;}
   .step p{color:var(--muted);font-size:15px;max-width:440px;}
 
-  /* ---------- modeli ---------- */
+  /* Modeli */
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
   .model{
     background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;
@@ -182,13 +220,12 @@
   .model-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
   .tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink);background:#EAF5EF;border:1px solid #CDE7D7;padding:5px 11px;border-radius:999px;}
   .price{font-size:19px;font-weight:700;letter-spacing:-.02em;}
-  .price small{font-size:12.5px;font-weight:500;color:var(--muted);}
   .model h3{font-family:'Fraunces',serif;font-weight:500;font-size:23px;letter-spacing:-.01em;}
   .model p.desc{color:var(--muted);font-size:14.5px;margin-top:8px;flex:1;}
   .model .actions{display:flex;gap:10px;margin-top:22px;}
   .model .actions .btn{flex:1;padding:12px 10px;font-size:13.5px;}
 
-  /* ---------- narudžba ---------- */
+  /* Narudžba */
   .order-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start;}
   .order-info ul{list-style:none;margin-top:26px;}
   .order-info li{
@@ -211,6 +248,7 @@
   .form-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:26px;flex-wrap:wrap;}
   .pay-note{font-size:13.5px;color:var(--muted);}
   .pay-note b{color:var(--ink);}
+
   .audio-box{
     position:fixed;top:16px;left:16px;z-index:9999;
     display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.94);
@@ -220,7 +258,7 @@
   .audio-box span{font-size:12px;font-weight:600;white-space:nowrap;}
   .audio-box audio{height:32px;width:180px;}
 
-  /* ---------- faq ---------- */
+  /* FAQ */
   .faq-list{max-width:760px;}
   details{border-bottom:1px solid var(--line);}
   details:first-of-type{border-top:1px solid var(--line);}
@@ -258,8 +296,8 @@
 <div class="topbar">
   <div class="wrap">
     <span>Jednokratna kupovina</span><span class="dot">•</span>
-    <span>Bez pretplate</span><span class="dot">•</span>
-    <span>Besplatna dostava za narudžbe od <b>2+ komada</b></span>
+    <span>Bez mjesečne pretplate</span><span class="dot">•</span>
+    <span>Besplatna dostava za <b>2+ komada</b></span>
   </div>
 </div>
 
@@ -267,7 +305,7 @@
   <div class="wrap header-inner">
     <a href="#" class="logo"><span class="logo-mark">LR</span>LokalniRast</a>
     <nav class="main">
-      <a href="#prednosti">Prednosti</a>
+      <a href="#prednosti">Zašto NFC?</a>
       <a href="#modeli">Modeli</a>
       <a href="#kako-radi">Kako radi</a>
       <a href="#faq">FAQ</a>
@@ -282,17 +320,17 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow"><span class="pulse"></span>NFC + QR stalci za Google recenzije</span>
-        <h1>Više 5★ recenzija, <em>jednim dodirom</em> telefona.</h1>
-        <p class="lead">Akrilni stalak sa NFC čipom i QR kodom koji vodi kupca direktno na vašu Google stranicu za recenziju. Bez ukucavanja, bez traženja — spremno za tri sekunde.</p>
+        <span class="eyebrow"><span class="pulse"></span>NFC + QR Stalci za Google Recenzije</span>
+        <h1>Povećajte ocjene na Google Maps-u, <em>jednim dodirom</em>.</h1>
+        <p class="lead">Pametni akrilni stalak sa integrisanim NFC čipom i QR kodom koji vodi klijenta direktno na vašu Google Business stranicu. Skupljajte više 5★ ocjena bez traženja i ukucavanja.</p>
         <div class="hero-cta">
           <a href="#naruci" class="btn btn-dark" style="padding:15px 28px;font-size:15px;">Naruči stalak — 35 KM</a>
           <a href="#modeli" class="btn btn-ghost" style="padding:15px 28px;font-size:15px;">Pogledaj modele</a>
         </div>
         <div class="hero-facts">
-          <div><b>3 s</b><span>od dodira do recenzije</span></div>
-          <div><b>0 KM</b><span>mjesečnih troškova</span></div>
-          <div><b>100%</b><span>iPhone i Android</span></div>
+          <div><b>3 sec</b><span>brzo ostavljanje recenzije</span></div>
+          <div><b>0 KM</b><span>skrivenih troškova</span></div>
+          <div><b>100%</b><span>iPhone & Android podrška</span></div>
         </div>
       </div>
 
@@ -300,24 +338,24 @@
         <div class="stage-bg"></div>
         <div class="stage-chip chip-1">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
-          1 dodir — otvori se Google
+          1 Dodir — Otvara Google Recenziju
         </div>
         <div class="stage-chip chip-2">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          Programirano za vaš biznis
+          Programirano za Vaš Biznis
         </div>
         <div class="stand-wrap">
-          <img src="stalak.jpg" alt="Akrilni NFC i QR stalak za Google recenzije Black Lux Edition" class="stand-photo" loading="eager">
+          <img src="stalak.jpg" alt="Akrilni NFC i QR stalak za Google recenzije Black Lux Edition" class="stand-photo" loading="eager" width="400" height="400">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MARQUEE -->
+  <!-- MARQUEE KEYWORDS -->
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span>Jednokratna kupovina <i>•</i></span><span>Bez pretplate <i>•</i></span><span>Plaćanje pouzećem <i>•</i></span><span>Brza dostava <i>•</i></span><span>iPhone i Android <i>•</i></span><span>Personaliziran za vaš biznis <i>•</i></span>
-      <span>Jednokratna kupovina <i>•</i></span><span>Bez pretplate <i>•</i></span><span>Plaćanje pouzećem <i>•</i></span><span>Brza dostava <i>•</i></span><span>iPhone i Android <i>•</i></span><span>Personaliziran za vaš biznis <i>•</i></span>
+      <span>Više Google Recenzija <i>•</i></span><span>Bolje Rangiranje na Google Maps <i>•</i></span><span>Jednokratna Kupovina <i>•</i></span><span>Bez Pretplate <i>•</i></span><span>Plaćanje Pouzećem <i>•</i></span><span>Za Kafiće, Salone i Restorane <i>•</i></span>
+      <span>Više Google Recenzija <i>•</i></span><span>Bolje Rangiranje na Google Maps <i>•</i></span><span>Jednokratna Kupovina <i>•</i></span><span>Bez Pretplate <i>•</i></span><span>Plaćanje Pouzećem <i>•</i></span><span>Za Kafiće, Salone i Restorane <i>•</i></span>
     </div>
   </div>
 
@@ -325,24 +363,25 @@
   <section id="prednosti" class="block">
     <div class="wrap">
       <div class="sec-head">
-        <div class="sec-kicker">Zašto ovo radi</div>
-        <h2>Kupci ne ostavljaju recenzije jer je proces spor. Vi ga skraćujete na tri sekunde.</h2>
+        <div class="sec-kicker">Lokalni SEO & Reputacija</div>
+        <h2>Zašto su Google recenzije ključne za vaš lokalni biznis?</h2>
+        <p class="sec-sub">Klijenti ne ostavljaju ocjene jer je proces komplikovan. NFC stalak eliminiše pretragu i vodi ih direktno na zvjezdice dok je iskustvo svježe.</p>
       </div>
       <div class="grid-3">
         <div class="feature">
           <div class="num">01</div>
-          <h3>NFC + QR — dvostruka pokrivenost</h3>
-          <p>NFC za nove telefone, QR za sve ostale. Koji god uređaj kupac ima, recenzija je uvijek na dohvat ruke.</p>
+          <h3>Brzi NFC & QR Sistem</h3>
+          <p>NFC tehnologija za novije pametne telefone i vidljivi QR kod za starije modele. Savršena pokrivenost za sve posjetioce.</p>
         </div>
         <div class="feature">
           <div class="num">02</div>
-          <h3>Jači rang na Google Maps-u</h3>
-          <p>Profil sa svježim 5★ recenzijama rangira se iznad konkurencije kada netko traži uslugu u vašem gradu.</p>
+          <h3>Prvo Mjesto na Google Pretrazi</h3>
+          <p>Google Maps algoritam preferira biznise sa stalnim prilivom pozitivnih 5★ recenzija. Pobijedite konkurenciju u svom gradu.</p>
         </div>
         <div class="feature">
           <div class="num">03</div>
-          <h3>Kupite jednom, koristite zauvijek</h3>
-          <p>Vaš stalak, vaš link, nula mjesečnih troškova. Ako promijenite lokaciju, stalak ide s vama.</p>
+          <h3>Kupite Jednom — Trajno Vlasništvo</h3>
+          <p>Bez ikakvih mjesečnih pretplata i softverskih naknada. Dobijate programiran i spreman stalak koji traje godinama.</p>
         </div>
       </div>
     </div>
@@ -352,24 +391,24 @@
   <section id="kako-radi" class="block" style="padding-top:0;">
     <div class="wrap">
       <div class="sec-head">
-        <div class="sec-kicker">Kako radi</div>
-        <h2>Tri koraka. Nula tehnologije s vaše strane.</h2>
+        <div class="sec-kicker">Jednostavna primjena</div>
+        <h2>Tri koraka do stotina novih Google ocjena.</h2>
       </div>
       <div class="steps">
         <div class="step">
           <div class="snum">01</div>
-          <h3>Postavite stalak</h3>
-          <p>Na šank, pult ili sto — gdje ga kupci najlakše vide u trenutku plaćanja. Stiže vam programiran i spreman.</p>
+          <h3>Postavite stalak na vidljivo mjesto</h3>
+          <p>Na šank, recepciju, stolove ili pult pored kase — tamo gdje kupci provode nekoliko trenutaka prilikom plaćanja.</p>
         </div>
         <div class="step">
           <div class="snum">02</div>
-          <h3>Kupac prisloni ili skenira</h3>
-          <p>Jedan dodir telefona na NFC čip ili brzi sken QR koda — bez appova, bez ukucavanja linkova.</p>
+          <h3>Klijent prisloni ili skenira</h3>
+          <p>Prislanjanjem telefona na NFC čip ili brzim skeniranjem QR koda putem kamere — bez potrebe za instaliranjem aplikacija.</p>
         </div>
         <div class="step">
           <div class="snum">03</div>
-          <h3>Otvara se vaša recenzija</h3>
-          <p>Telefon odmah otvara vašu Google stranicu sa zvjezdicama. Kupac odabere 5★ i pošalje — to je sve.</p>
+          <h3>Direktno otvaranje 5★ recenzije</h3>
+          <p>Telefon se u 3 sekunde otvara na vašem zvaničnom Google profilu sa spremnim opcijama za ocjenjivanje.</p>
         </div>
       </div>
     </div>
@@ -379,35 +418,35 @@
   <section id="modeli" class="block" style="background:#F0EDE6;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
     <div class="wrap">
       <div class="sec-head">
-        <div class="sec-kicker">Modeli i cijene</div>
-        <h2>Dva modela. Jedna cijena. Bez sitnog tiska.</h2>
+        <div class="sec-kicker">Ponuda i Modeli</div>
+        <h2>Odaberite dizajn koji najbolje odgovara vašem enterijeru.</h2>
       </div>
       <div class="grid-2">
         <div class="model">
           <div class="model-visual mv-photo">
-            <img src="stalak.jpg" alt="Crni akrilni NFC i QR stalak za Google recenzije Black Lux Edition" loading="lazy">
+            <img src="stalak.jpg" alt="Crni akrilni NFC i QR stalak za Google recenzije Black Lux Edition" loading="lazy" width="230" height="230">
           </div>
           <div class="model-body">
-            <div class="model-top"><span class="tag">Jednokratno</span><span class="price">35 KM</span></div>
+            <div class="model-top"><span class="tag">Najprodavanije</span><span class="price">35 KM</span></div>
             <h3>Black Lux Edition</h3>
-            <p class="desc">Mat crni akril za restorane, kafiće, barove i salone — dizajn koji ne odvlači pažnju s atmosfere.</p>
+            <p class="desc">Elegantan mat crni akril. Idealno za kafiće, barove, restorane, auto-salone i frizerske salone.</p>
             <div class="actions">
               <button type="button" class="btn btn-dark select-model" data-model="Black Lux Edition">Odaberi model</button>
-              <button type="button" class="btn btn-ghost" onclick="document.getElementById('naruci').scrollIntoView({behavior:'smooth'})">Naruči</button>
+              <button type="button" class="btn btn-ghost" onclick="document.getElementById('naruci').scrollIntoView({behavior:'smooth'})">Naruči odmah</button>
             </div>
           </div>
         </div>
         <div class="model">
           <div class="model-visual mv-photo mv-photo-light">
-            <img src="stalak-2.png" alt="Bijeli akrilni NFC i QR stalak za Google recenzije White Pure Edition" loading="lazy">
+            <img src="stalak-2.png" alt="Bijeli akrilni NFC i QR stalak za Google recenzije White Pure Edition" loading="lazy" width="230" height="230">
           </div>
           <div class="model-body">
-            <div class="model-top"><span class="tag">Jednokratno</span><span class="price">35 KM</span></div>
+            <div class="model-top"><span class="tag">Minimalistički</span><span class="price">35 KM</span></div>
             <h3>White Pure Edition</h3>
-            <p class="desc">Svijetli minimalistički dizajn za recepcije, ordinacije i moderne interijere gdje dominiraju svijetle boje.</p>
+            <p class="desc">Čist i moderan bijeli dizajn. Savršeno pristaje stomatološkim ordinacijama, poliklinikama, recepcijama i kozmetičkim salonima.</p>
             <div class="actions">
               <button type="button" class="btn btn-dark select-model" data-model="White Pure Edition">Odaberi model</button>
-              <button type="button" class="btn btn-ghost" onclick="document.getElementById('naruci').scrollIntoView({behavior:'smooth'})">Naruči</button>
+              <button type="button" class="btn btn-ghost" onclick="document.getElementById('naruci').scrollIntoView({behavior:'smooth'})">Naruči odmah</button>
             </div>
           </div>
         </div>
@@ -415,72 +454,73 @@
     </div>
   </section>
 
-  <!-- NARUDŽBA -->
+  <!-- NARUDŽBA FORMA -->
   <section id="naruci" class="block">
     <div class="wrap order-grid">
       <div class="order-info">
-        <div class="sec-kicker">Narudžba</div>
-        <h2>Popunite formu — mi sve ostalo sređujemo.</h2>
-        <p class="sec-sub">Plaćanje pouzećem, pa ništa ne plaćate dok stalak ne stigne u ruke.</p>
+        <div class="sec-kicker">Brza narudžba</div>
+        <h2>Unesite podatke i mi ćemo programirati vaš stalak.</h2>
+        <p class="sec-sub">Sigurno plaćanje pouzećem po preuzimanju pošiljke. Bez ikakvih unaprijed uplate.</p>
         <ul>
           <li>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-            <span><b>NFC + QR programiran</b> za tačno vaš Google profil prije slanja.</span>
+            <span><b>Programiran za vaš profil</b> — dodajemo tačan Google Maps link prije slanja.</span>
           </li>
           <li>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-            <span><b>Jednokratna kupovina</b> — bez računa, bez pretplate, bez iznenađenja.</span>
+            <span><b>Spreman za korištenje</b> — samo ga izvadite iz kutije i postavite na pult.</span>
           </li>
           <li>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-            <span><b>Spreman za upotrebu</b> — iz paketa direktno na šank.</span>
+            <span><b>Besplatna dostava</b> na vašu adresu za narudžbe od 2 ili više komada.</span>
           </li>
         </ul>
         <div class="audio-box">
           <span>Pozadinska muzika</span>
           <audio controls loop src="pjesma.mp3">
             <source src="pjesma.mp3" type="audio/mpeg">
-            Vaš preglednik ne podržava audio element.
           </audio>
         </div>
       </div>
 
-      <!-- ČISTA NATIVNA NETLIFY FORMA -->
-      <form name="narudzbe" action="/success" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="order">
-        <input type="hidden" name="form-name" value="narudzbe" />
-        <p hidden><label>Ne popunjavajte ovo polje: <input name="bot-field"></label></p>
+      <!-- WEB3FORMS OPTIMIZOVANA FORMA ZA VERCEL -->
+      <form action="https://api.web3forms.com/submit" method="POST" class="order">
+        <input type="hidden" name="access_key" value="0c8b2aaf-c6f7-44fb-881c-29fb1731ecc0" />
+        <input type="hidden" name="subject" value="Nova Narudžba Stalka - Lokalni Rast" />
+        <input type="hidden" name="from_name" value="Lokalni Rast Sajt" />
+
         <div class="f-grid">
           <div class="f-full">
-            <label for="biznis">Naziv radnje na Google-u</label>
-            <input id="biznis" class="input" required name="biznis" placeholder="Npr. Caffe Bar Centar" />
+            <label for="biznis">Naziv vaše radnje/objekta na Google Maps-u</label>
+            <input id="biznis" class="input" required name="Naziv Biznisa Na Google" placeholder="Npr. Restoran Centar Sarajevo" />
           </div>
           <div>
-            <label for="modelSelect">Izbor modela</label>
-            <select id="modelSelect" name="model" class="input" required>
-              <option value="Black Lux Edition">Black Lux Edition</option>
-              <option value="White Pure Edition">White Pure Edition</option>
+            <label for="modelSelect">Odaberite Model</label>
+            <select id="modelSelect" name="Model Stalka" class="input" required>
+              <option value="Black Lux Edition">Black Lux Edition (Crni)</option>
+              <option value="White Pure Edition">White Pure Edition (Bijeli)</option>
             </select>
           </div>
           <div>
-            <label for="kolicina">Količina</label>
-            <input id="kolicina" type="number" min="1" value="1" class="input" name="kolicina" required />
+            <label for="kolicina">Količina (kom)</label>
+            <input id="kolicina" type="number" min="1" value="1" class="input" name="Kolicina" required />
           </div>
           <div>
-            <label for="ime">Ime i prezime</label>
-            <input id="ime" class="input" name="ime" required placeholder="Vaše ime" />
+            <label for="ime">Ime i prezime primaoca</label>
+            <input id="ime" class="input" name="Ime i Prezime" required placeholder="Vaše ime" />
           </div>
           <div>
-            <label for="telefon">Broj telefona</label>
-            <input id="telefon" class="input" name="telefon" required placeholder="06X XXX XXX" />
+            <label for="telefon">Broj telefona (za brzu poštu)</label>
+            <input id="telefon" class="input" name="Broj Telefona" required placeholder="06X XXX XXX" />
           </div>
           <div class="f-full">
             <label for="adresa">Adresa i grad za dostavu</label>
-            <input id="adresa" class="input" name="adresa" required placeholder="Ulica, broj, grad i poštanski broj" />
+            <input id="adresa" class="input" name="Adresa i Grad" required placeholder="Ulica, broj, grad i poštanski broj" />
           </div>
         </div>
         <div class="form-foot">
-          <p class="pay-note">Plaćanje: <b>pouzećem</b> prilikom preuzimanja</p>
-          <button type="submit" class="btn btn-green" style="padding:14px 30px;font-size:15px;">Pošalji narudžbu</button>
+          <p class="pay-note">Plaćanje: <b>Pouzećem</b> (prilikom preuzimanja)</p>
+          <button type="submit" class="btn btn-green" style="padding:14px 30px;font-size:15px;">Potvrdi Narudžbu</button>
         </div>
       </form>
     </div>
@@ -490,25 +530,29 @@
   <section id="faq" class="block" style="padding-top:0;">
     <div class="wrap">
       <div class="sec-head">
-        <div class="sec-kicker">FAQ</div>
-        <h2>Pitanja koja se stalno ponavljaju.</h2>
+        <div class="sec-kicker">Česta pitanja (FAQ)</div>
+        <h2>Sve što trebate znati prije kupovine.</h2>
       </div>
       <div class="faq-list">
         <details>
-          <summary>Da li postoji mjesečna pretplata?<span class="plus">+</span></summary>
-          <p>Ne. Ovo je jednokratna kupovina — platite stalak jednom i koristite ga koliko god želite, bez ikakvih naknadnih troškova.</p>
+          <summary>Da li postoji bilo kakva mjesečna pretplata?<span class="plus">+</span></summary>
+          <p>Apsolutno ne. Ovo je jednokratna kupovina. Stalak kupujete jednom i koristite ga zauvijek bez ikakvih skrivenih troškova ili obnavljanja licenci.</p>
         </details>
         <details>
-          <summary>Kako programirate link za moj biznis?<span class="plus">+</span></summary>
-          <p>Kada primimo narudžbu, povezujemo vaš Google profil sa NFC čipom i QR kodom prije slanja. Stalak stiže spreman — samo ga postavite.</p>
+          <summary>Kako znate koji Google profil da programirate?<span class="plus">+</span></summary>
+          <p>U formi za narudžbu navodite tačan naziv vašeg objekta na Google-u. Prije slanja naši tehničari pronalaze vaš zvanični profil i zapisuju vaš direktni Google Review link na NFC čip i QR kod.</p>
         </details>
         <details>
-          <summary>Da li radi na svim telefonima?<span class="plus">+</span></summary>
-          <p>Da. NFC pokriva većinu novijih iPhone i Android uređaja, a QR kod radi na svakom pametnom telefonu sa kamerom. Kupac uvijek ima opciju.</p>
+          <summary>Da li NFC stalak radi na svim pametnim telefonima?<span class="plus">+</span></summary>
+          <p>Da! NFC funkcionira na većini modernih Android i iPhone uređaja (svi iPhone modeli od 2018. pa na ovamo). Za starije uređaje, tu je laserski otisnut QR kod koji se skenira običnom kamerom.</p>
         </details>
         <details>
-          <summary>Koliko traje isporuka?<span class="plus">+</span></summary>
-          <p>Nakon potvrde narudžbe, stalak šaljemo u roku od 2–3 radna dana. Za narudžbe od 2 i više komada dostava je besplatna.</p>
+          <summary>Kako dodavanje Google recenzija pomaže mom biznisu?<span class="plus">+</span></summary>
+          <p>Google Maps algoritam direktno rangira biznise na osnovu broja i ocjene recenzija. Veći broj 5★ recenzija znači da će se vaša radnja prikazati na vrhu kada klijenti pretražuju vaše usluge u gradu.</p>
+        </details>
+        <details>
+          <summary>Koliko traje isporuka pošiljke?<span class="plus">+</span></summary>
+          <p>Dostava na vašu adresu u Bosni i Hercegovini traje od 24h do 48h radnim danima. Robu plaćate kuriru brze pošte tek nakon što preuzmete paket.</p>
         </details>
       </div>
     </div>
@@ -518,7 +562,7 @@
 
 <footer>
   <div class="wrap foot-inner">
-    <div>© 2026 Lokalni Rast. Sva prava zadržana.</div>
+    <div>© 2026 Lokalni Rast. Sva prava zadržana. Tehnička podrška & NFC rešenja.</div>
     <nav>
       <a href="#prednosti">Prednosti</a>
       <a href="#modeli">Modeli</a>
