@@ -4,9 +4,12 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 
-<!-- Favicon (Ikonica u tabu pregledača) -->
+<!-- Favicon -->
 <link rel="icon" type="image/png" href="image.png" />
 <link rel="apple-touch-icon" href="image.png" />
+
+<!-- Vercel Analytics -->
+<script defer src="/_vercel/insights/script.js"></script>
 
 <!-- CSP Security Fix: Automatski preusmjerava sve resurse na HTTPS -->
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
@@ -21,6 +24,8 @@
 <meta name="keywords" content="NFC stalci za recenzije, Google recenzije stalak, NFC kartica recenzije, Google Maps recenzije, kako dobiti vise google ocjena, google my business recenzije, akrilni stalak QR, lokalni SEO sarajevo bih, pametni stalak za ocjene, google review kartica, ocjene za restorane i salone" />
 <meta name="robots" content="index, follow" />
 <meta name="author" content="Lokalni Rast" />
+
+<!-- KLJUČNI TAČNI CANONICAL TAG KOJI SREĐUJE SEARCH CONSOLE -->
 <link rel="canonical" href="https://lokalnirast.store/" />
 
 <!-- Open Graph / Facebook / WhatsApp / Viber -->
@@ -84,9 +89,9 @@
     --muted:#5F5C55;
     --line:#E6E3DC;
     --card:#FFFFFF;
-    --accent:#1A7A46;      
+    --accent:#1A7A46;     
     --accent-ink:#0E4A2A;
-    --yellow:#F5B301;      
+    --yellow:#F5B301;     
     --radius:14px;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -341,7 +346,6 @@
     border-radius: 50%;
     display: block;
   }
-  /* Fallback ikonica ako image.png ne postoji */
   .contact-main-btn .fallback-icon {
     display: none;
     color: #FFFFFF;
@@ -376,7 +380,6 @@
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
   
-  /* Otvaranje na hover (desktop) i na .active klasu (mobile) */
   .contact-menu-wrap:hover .contact-items,
   .contact-menu-wrap.active .contact-items {
     opacity: 1;
@@ -719,18 +722,18 @@
       Viber Chat
     </a>
     <a href="https://wa.me/38761965245" class="contact-item c-whatsapp" target="_blank" rel="noopener">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 2c-5.517 0-9.993 4.476-9.993 9.993 0 1.763.459 3.479 1.33 4.996l-1.413 5.161 5.283-1.386c1.458.796 3.104 1.222 4.793 1.222 5.517 0 9.993-4.476 9.993-9.993s-4.476-9.993-9.993-9.993zm5.82 14.127c-.242.68-1.41 1.3-1.944 1.381-.534.081-1.218.113-1.97-.132-.456-.149-1.042-.345-1.791-.67-3.155-1.37-5.207-4.567-5.365-4.778-.158-.211-1.286-1.713-1.286-3.267 0-1.554.816-2.318 1.106-2.634.29-.316.632-.395.843-.395.211 0 .422.002.606.011.198.01.463-.075.725.553.263.628.895 2.18.974 2.338.079.158.132.342.026.553-.105.211-.158.342-.316.527-.158.185-.333.413-.475.555-.158.158-.323.33-.139.646.185.316.822 1.356 1.767 2.198 1.213 1.082 2.235 1.418 2.551 1.576.316.158.501.132.686-.079.185-.211.791-.922 1.002-1.238.211-.316.422-.263.711-.158.29.105 1.844.87 2.16 1.028.316.158.527.237.606.369.079.132.079.764-.163 1.444z"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 2c-5.517 0-9.993 4.476-9.993 9.993 0 1.763.459 3.479 1.33 4.996l-1.413 5.161 5.285-1.386c1.462.798 3.116 1.218 4.791 1.218 5.517 0 9.993-4.476 9.993-9.993 0-5.517-4.476-9.993-9.993-9.993zm5.823 14.161c-.241.677-1.387 1.328-1.93 1.386-.525.058-1.203.088-3.483-.855-2.915-1.203-4.789-4.175-4.935-4.37-.146-.195-1.189-1.581-1.189-3.013 0-1.432.748-2.138 1.012-2.43.264-.293.578-.366.771-.366.193 0 .386.002.555.01.182.008.423-.069.662.505.241.575.82 2.001.892 2.148.073.146.121.317.024.512-.097.195-.146.317-.289.488-.143.171-.302.382-.432.512-.143.143-.292.298-.126.583.166.285.738 1.217 1.583 1.97 1.087.968 2.004 1.268 2.289 1.413.285.146.452.122.618-.073.166-.195.712-.829.901-1.112.189-.283.378-.236.634-.141.256.095 1.621.764 1.9 1.002.279.238.466.353.535.471.069.118.069.688-.172 1.365z"/></svg>
       WhatsApp Chat
     </a>
-    <a href="mailto:lokalnirast@gmail.com" class="contact-item c-email">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
-      lokalnirast@gmail.com
+    <a href="mailto:said.covicc@gmail.com" class="contact-item c-email">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Pošalji Email
     </a>
   </div>
-
-  <button class="contact-main-btn" id="contactMainBtn" type="button" aria-label="Otveri opcije za kontakt">
-    <img src="image.png" id="avatarImg" alt="Profilna kontakt" onerror="handleImageError(this)">
-    <div class="fallback-icon" id="fallbackIcon">
+  
+  <button class="contact-main-btn" id="contactMainBtn" aria-label="Otvorite meni za kontakt">
+    <img src="image.png" alt="Kontakt ikonica" onerror="this.parentElement.classList.add('has-fallback')">
+    <div class="fallback-icon">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
     </div>
     <span class="online-badge"></span>
@@ -738,24 +741,19 @@
 </div>
 
 <script>
-  // Odabir modela u formi
-  const modelSelect = document.getElementById('modelSelect');
+  // Odabir modela iz kartice u formu
   document.querySelectorAll('.select-model').forEach(btn => {
-    btn.addEventListener('click', () => {
-      modelSelect.value = btn.dataset.model;
+    btn.addEventListener('click', function() {
+      const model = this.getAttribute('data-model');
+      const select = document.getElementById('modelSelect');
+      if (select) {
+        select.value = model;
+      }
       document.getElementById('naruci').scrollIntoView({ behavior: 'smooth' });
     });
   });
 
-  // Rukovanje greškom učitavanja profilne slike
-  function handleImageError(img) {
-    const btn = document.getElementById('contactMainBtn');
-    if (btn) {
-      btn.classList.add('has-fallback');
-    }
-  }
-
-  // Interakcija sa kontakt menijem za mobilne uređaje (na klik)
+  // Mobile toggle za kontakt dugme
   const contactMenu = document.getElementById('contactMenu');
   const contactMainBtn = document.getElementById('contactMainBtn');
 
