@@ -303,13 +303,13 @@
   details[open] .plus{transform:rotate(45deg);color:var(--ink);}
   details p{padding:0 4px 18px;color:var(--muted);font-size:14.5px;max-width:640px;}
 
-  /* FOOTER - VEĆI PADDING ZA MOBITEL DA MENI NE SMETA LINKOVIMA */
+  /* FOOTER */
   footer{border-top:1px solid var(--line);padding:28px 0 100px 0;}
   .foot-inner{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted);}
   .foot-inner nav{display:flex;gap:18px;font-weight:500;}
   .foot-inner nav a:hover{color:var(--ink);}
 
-  /* Multi-Contact Floating Menu Styles */
+  /* PRECIZNI PLUTAJUĆI KONTAKT MENI (BEZ LAŽNOG HITBOX-A) */
   .contact-menu-wrap {
     position: fixed;
     bottom: 24px;
@@ -319,6 +319,7 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 12px;
+    pointer-events: none; /* Sprečava da kontejner hvata klikove ili hover van dugmeta */
   }
   .contact-main-btn {
     width: 60px;
@@ -334,6 +335,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    pointer-events: auto; /* Omogućava klik tačno na krug */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   .contact-main-btn:hover {
@@ -374,14 +376,16 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(12px);
+    pointer-events: none; /* Dok je zatvoren, potpuno ignorisan za miš */
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
   
-  .contact-menu-wrap:hover .contact-items,
+  /* Meni se otvara samo kada kontejner ima .active klasu (klik na dugme) */
   .contact-menu-wrap.active .contact-items {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    pointer-events: auto; /* Sadržaj se aktivira tek kada se otvori */
   }
   
   .contact-item {
@@ -753,16 +757,23 @@
     });
   });
 
-  // Mobile toggle za kontakt dugme
+  // Precizan Toggle za kontakt dugme na klik i hover iznad samog dugmeta
   const contactMenu = document.getElementById('contactMenu');
   const contactMainBtn = document.getElementById('contactMainBtn');
 
   if (contactMainBtn && contactMenu) {
+    // Klik na dugme otvara/zatvara meni
     contactMainBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       contactMenu.classList.toggle('active');
     });
 
+    // Otvaranje na hover samo kada je mišem stignuto tačno iznad samog kruga
+    contactMainBtn.addEventListener('mouseenter', () => {
+      contactMenu.classList.add('active');
+    });
+
+    // Zatvaranje klikom bilo gdje van menija
     document.addEventListener('click', (e) => {
       if (!contactMenu.contains(e.target)) {
         contactMenu.classList.remove('active');
