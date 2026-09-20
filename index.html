@@ -299,6 +299,78 @@
   .foot-inner nav{display:flex;gap:18px;font-weight:500;}
   .foot-inner nav a:hover{color:var(--ink);}
 
+  /* Multi-Contact Floating Menu Styles */
+  .contact-menu-wrap {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: 12px;
+  }
+  .contact-main-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--ink);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(20, 19, 16, 0.3);
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    transition: transform 0.2s ease;
+  }
+  .contact-main-btn:hover {
+    transform: scale(1.06);
+  }
+  .contact-main-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .contact-menu-wrap:hover .contact-items,
+  .contact-menu-wrap:focus-within .contact-items {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    color: #FFFFFF;
+    font-size: 13.5px;
+    font-weight: 600;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.18s ease;
+  }
+  .contact-item:hover {
+    transform: translateX(-4px);
+  }
+  .c-viber { background-color: #7360F2; }
+  .c-whatsapp { background-color: #25D366; }
+  .c-email { background-color: #141310; }
+
   /* Mobile Media Queries */
   @media(max-width:850px){
     .hero-grid,.order-grid,.grid-2,.grid-3{grid-template-columns:1fr;}
@@ -315,6 +387,7 @@
     .hero-cta{flex-direction:column;}
     .hero-cta .btn{width:100%;}
     form.order{padding:18px;}
+    .contact-menu-wrap { bottom: 18px; right: 18px; }
   }
 </style>
 </head>
@@ -603,6 +676,27 @@
     </nav>
   </div>
 </footer>
+
+<!-- PLUTAJUĆI KONTAKT MENI SA PROFILNOM SLIKOM -->
+<div class="contact-menu-wrap" tabindex="0">
+  <button class="contact-main-btn" aria-label="Otveri opcije za kontakt">
+    <img src="image.png" alt="Kontakt Profilna" onerror="this.src='stalak.jpg'">
+  </button>
+  <div class="contact-items">
+    <a href="viber://chat?number=%2B38761965245" class="contact-item c-viber" target="_blank">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.39 14.88c-.68-.43-2.15-1.12-2.48-1.25-.33-.12-.57-.18-.81.18-.24.36-.93 1.25-1.14 1.5-.21.24-.42.27-.78.09-.36-.18-1.52-.56-2.9-1.79-1.07-.96-1.8-2.14-2.01-2.5-.21-.36-.02-.56.16-.74.16-.16.36-.42.54-.63.18-.21.24-.36.36-.6.12-.24.06-.45-.03-.63-.09-.18-.81-1.95-1.11-2.67-.29-.71-.59-.61-.81-.62h-.69c-.24 0-.63.09-.96.45-.33.36-1.26 1.23-1.26 3 0 1.77 1.29 3.48 1.47 3.72.18.24 2.54 3.88 6.16 5.44.86.37 1.53.59 2.05.76.86.27 1.65.23 2.27.14.69-.1 2.15-.88 2.45-1.73.3-.85.3-1.58.21-.73-.09-.15-.33-.24-.69-.42z"/></svg>
+      Viber Chat
+    </a>
+    <a href="https://wa.me/38761965245" class="contact-item c-whatsapp" target="_blank">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 2c-5.517 0-9.993 4.476-9.993 9.993 0 1.763.459 3.479 1.33 4.996l-1.413 5.161 5.283-1.386c1.458.796 3.104 1.222 4.793 1.222 5.517 0 9.993-4.476 9.993-9.993s-4.476-9.993-9.993-9.993zm5.82 14.127c-.242.68-1.41 1.3-1.944 1.381-.534.081-1.218.113-1.97-.132-.456-.149-1.042-.345-1.791-.67-3.155-1.37-5.207-4.567-5.365-4.778-.158-.211-1.286-1.713-1.286-3.267 0-1.554.816-2.318 1.106-2.634.29-.316.632-.395.843-.395.211 0 .422.002.606.011.198.01.463-.075.725.553.263.628.895 2.18.974 2.338.079.158.132.342.026.553-.105.211-.158.342-.316.527-.158.185-.333.413-.475.555-.158.158-.323.33-.139.646.185.316.822 1.356 1.767 2.198 1.213 1.082 2.235 1.418 2.551 1.576.316.158.501.132.686-.079.185-.211.791-.922 1.002-1.238.211-.316.422-.263.711-.158.29.105 1.844.87 2.16 1.028.316.158.527.237.606.369.079.132.079.764-.163 1.444z"/></svg>
+      WhatsApp Chat
+    </a>
+    <a href="mailto:lokalnirast@gmail.com" class="contact-item c-email">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+      lokalnirast@gmail.com
+    </a>
+  </div>
+</div>
 
 <script>
   const modelSelect = document.getElementById('modelSelect');
