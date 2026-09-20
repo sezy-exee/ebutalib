@@ -17,21 +17,21 @@
 <meta name="keywords" content="NFC stalci za recenzije, Google recenzije stalak, NFC kartica recenzije, Google Maps recenzije, kako dobiti vise google ocjena, google my business recenzije, akrilni stalak QR, lokalni SEO sarajevo bih, pametni stalak za ocjene, google review kartica, ocjene za restorane i salone" />
 <meta name="robots" content="index, follow" />
 <meta name="author" content="Lokalni Rast" />
-<link rel="canonical" href="https://lokalnirast.vercel.app/" />
+<link rel="canonical" href="https://lokalnirast.store/" />
 
 <!-- Open Graph / Facebook / WhatsApp / Viber -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://lokalnirast.vercel.app/" />
+<meta property="og:url" content="https://lokalnirast.store/" />
 <meta property="og:title" content="NFC & QR Stalci za Google Recenzije | Lokalni Rast" />
 <meta property="og:description" content="Skupite više 5★ Google recenzija u samo 3 sekunde. Jednokratna kupovina bez mjesečne pretplate. Brza dostava i garancija." />
-<meta property="og:image" content="https://lokalnirast.vercel.app/stalak.jpg" />
+<meta property="og:image" content="https://lokalnirast.store/stalak.jpg" />
 
 <!-- Twitter Cards -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://lokalnirast.vercel.app/" />
+<meta property="twitter:url" content="https://lokalnirast.store/" />
 <meta property="twitter:title" content="NFC & QR Stalci za Google Recenzije | Lokalni Rast" />
 <meta property="twitter:description" content="Skupite više 5★ Google recenzija u samo 3 sekunde. Jednokratna kupovina bez mjesečne pretplate." />
-<meta property="twitter:image" content="https://lokalnirast.vercel.app/stalak.jpg" />
+<meta property="twitter:image" content="https://lokalnirast.store/stalak.jpg" />
 
 <!-- Schema.org Structured Data (Google Rich Snippets) -->
 <script type="application/ld+json">
@@ -40,8 +40,8 @@
   "@type": "Product",
   "name": "NFC & QR Stalak za Google Recenzije",
   "image": [
-    "https://lokalnirast.vercel.app/stalak.jpg",
-    "https://lokalnirast.vercel.app/stalak-2.png"
+    "https://lokalnirast.store/stalak.jpg",
+    "https://lokalnirast.store/stalak-2.png"
   ],
   "description": "Akrilni stalak opremljen NFC tehnologijom i QR kodom za brzo prikupljanje pozitivnih 5 zvjezdica Google recenzija za restorane, salone i prodavnice.",
   "sku": "LR-NFC-STAND-01",
@@ -51,7 +51,7 @@
   },
   "offers": {
     "@type": "Offer",
-    "url": "https://lokalnirast.vercel.app/",
+    "url": "https://lokalnirast.store/",
     "priceCurrency": "BAM",
     "price": "35.00",
     "priceValidUntil": "2027-12-31",
@@ -93,7 +93,7 @@
     color:var(--ink);
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
-    overflow-x:hidden; /* Sprečava horizontalno skrolovanje na mobilnom */
+    overflow-x:hidden;
     width: 100%;
   }
   .serif{font-family:'Fraunces',Georgia,serif;}
@@ -136,8 +136,32 @@
   .btn-green{background:var(--accent);color:#fff;}
   .btn-green:hover{background:var(--accent-ink);}
 
+  /* Gornja traka za audio plejer na vrhu */
+  .top-audio-bar {
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--line);
+    padding: 8px 0;
+  }
+  .top-audio-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .top-audio-inner span {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .top-audio-inner audio {
+    height: 32px;
+    max-width: 260px;
+    width: 100%;
+  }
+
   /* Hero Section */
-  .hero{padding:64px 0 48px;}
+  .hero{padding:48px 0 48px;}
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;}
   .eyebrow{
     display:inline-flex;align-items:center;gap:8px;
@@ -257,16 +281,6 @@
   .pay-note{font-size:13px;color:var(--muted);}
   .pay-note b{color:var(--ink);}
 
-  /* Responsive Audio Box */
-  .audio-box{
-    margin-top:24px;
-    display:flex;align-items:center;gap:10px;background:#fff;
-    border:1px solid var(--line);border-radius:14px;padding:10px 14px;
-    max-width:100%;
-  }
-  .audio-box span{font-size:12px;font-weight:600;white-space:nowrap;}
-  .audio-box audio{height:32px;width:100%;max-width:200px;}
-
   /* FAQ */
   .faq-list{max-width:760px;}
   details{border-bottom:1px solid var(--line);}
@@ -326,6 +340,16 @@
     <a href="#naruci" class="btn btn-dark">Naruči odmah</a>
   </div>
 </header>
+
+<!-- AUDIO PLEJER TRAKA NA SAMOM VRHU -->
+<div class="top-audio-bar">
+  <div class="wrap top-audio-inner">
+    <span>🎵 Slušajte pozadinsku muziku dok pregledate:</span>
+    <audio controls loop src="pjesma.mp3">
+      <source src="pjesma.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+</div>
 
 <main>
 
@@ -488,18 +512,12 @@
             <span><b>Besplatna dostava</b> na vašu adresu za narudžbe od 2 ili više komada.</span>
           </li>
         </ul>
-        <div class="audio-box">
-          <span>Pozadinska muzika</span>
-          <audio controls loop src="pjesma.mp3">
-            <source src="pjesma.mp3" type="audio/mpeg">
-          </audio>
-        </div>
       </div>
 
-      <!-- WEB3FORMS OPTIMIZOVANA FORMA ZA VERCEL -->
+      <!-- WEB3FORMS OPTIMIZOVANA FORMA -->
       <form action="https://api.web3forms.com/submit" method="POST" class="order">
         <input type="hidden" name="access_key" value="0c8b2aaf-c6f7-44fb-881c-29fb1731ecc0" />
-        <input type="hidden" name="redirect" value="https://lokalnirast.vercel.app/" />
+        <input type="hidden" name="redirect" value="https://lokalnirast.store/success.html" />
         <input type="hidden" name="subject" value="Nova Narudžba Stalka - Lokalni Rast" />
         <input type="hidden" name="from_name" value="Lokalni Rast Sajt" />
 
