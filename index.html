@@ -309,7 +309,7 @@
   .foot-inner nav{display:flex;gap:18px;font-weight:500;}
   .foot-inner nav a:hover{color:var(--ink);}
 
-  /* PRECIZNI PLUTAJUĆI KONTAKT MENI (BEZ LAŽNOG HITBOX-A) */
+  /* PRECIZNI PLUTAJUĆI KONTAKT MENI - SAVRŠENO CENTRIRANA IKONICA I PRECIZAN HITBOX */
   .contact-menu-wrap {
     position: fixed;
     bottom: 24px;
@@ -319,7 +319,7 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 12px;
-    pointer-events: none; /* Sprečava da kontejner hvata klikove ili hover van dugmeta */
+    pointer-events: none; /* Kontejner ne sprečava klikove van dugmeta */
   }
   .contact-main-btn {
     width: 60px;
@@ -331,11 +331,12 @@
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
     overflow: hidden;
     padding: 0;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    pointer-events: auto; /* Omogućava klik tačno na krug */
+    pointer-events: auto; /* Reaguje tačno na površinu kruga */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   .contact-main-btn:hover {
@@ -346,16 +347,24 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     border-radius: 50%;
     display: block;
+    margin: 0 auto;
   }
   .contact-main-btn.has-fallback img {
     display: none;
   }
-  .contact-main-btn.has-fallback .fallback-icon {
-    display: flex;
+  .contact-main-btn .fallback-icon {
+    display: none;
+    width: 100%;
+    height: 100%;
     align-items: center;
     justify-content: center;
+    color: #FFFFFF;
+  }
+  .contact-main-btn.has-fallback .fallback-icon {
+    display: flex;
   }
   .online-badge {
     position: absolute;
@@ -376,16 +385,15 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(12px);
-    pointer-events: none; /* Dok je zatvoren, potpuno ignorisan za miš */
+    pointer-events: none; /* Dok je neaktivan, ne hhvata miša */
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
   
-  /* Meni se otvara samo kada kontejner ima .active klasu (klik na dugme) */
   .contact-menu-wrap.active .contact-items {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    pointer-events: auto; /* Sadržaj se aktivira tek kada se otvori */
+    pointer-events: auto;
   }
   
   .contact-item {
