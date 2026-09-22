@@ -113,6 +113,7 @@
   .topbar{
     background:var(--ink);color:#F3F1EA;
     font-size:13px;font-weight:500;letter-spacing:.02em;
+    position:relative;z-index:10;
   }
   .topbar .wrap{display:flex;justify-content:center;gap:18px;padding-top:9px;padding-bottom:9px;flex-wrap:wrap;text-align:center;}
   .topbar span b{color:#fff;font-weight:600;}
@@ -146,6 +147,8 @@
     background: #FFFFFF;
     border-bottom: 1px solid var(--line);
     padding: 8px 0;
+    position: relative;
+    z-index: 10;
   }
   .top-audio-inner {
     display: flex;
@@ -165,14 +168,51 @@
     width: 100%;
   }
 
-  /* Hero Section */
-  .hero{padding:48px 0 48px;}
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;}
+  /* Hero Section sa video pozadinom */
+  .hero{
+    position: relative;
+    padding: 64px 0 64px;
+    overflow: hidden;
+  }
+
+  /* Kontejner za pozadinski video */
+  .hero-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .hero-video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(8px) brightness(0.88);
+    transform: scale(1.05); /* Sprečava mutne ivice od blura */
+  }
+
+  .hero-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(250, 249, 246, 0.72);
+  }
+
+  .hero-grid{
+    position: relative;
+    z-index: 1;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:48px;
+    align-items:center;
+  }
   .eyebrow{
     display:inline-flex;align-items:center;gap:8px;
     font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
     color:var(--accent-ink);
-    border:1px solid #CDE7D7;background:#EAF5EF;
+    border:1px solid #CDE7D7;background:rgba(234,245,239,0.9);
     padding:7px 14px;border-radius:999px;margin-bottom:20px;
   }
   .eyebrow .pulse{width:7px;height:7px;border-radius:50%;background:var(--accent);}
@@ -191,25 +231,28 @@
   .hero-facts b{display:block;font-size:20px;font-weight:700;letter-spacing:-.02em;}
   .hero-facts span{font-size:12.5px;color:var(--muted);}
 
-  /* Video / Stage Container */
-  .hero-video-box {
-    position: relative;
-    width: 100%;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 16px 36px rgba(20, 19, 16, 0.18);
-    border: 1px solid var(--line);
-    background: #141310;
+  /* Stage / Product Visuals */
+  .stage{position:relative;width:100%;}
+  .stage-bg{
+    position:absolute;inset:4% 0;background:rgba(240,237,230,0.85);border-radius:24px;z-index:0;
+    backdrop-filter: blur(4px);
   }
-  .hero-video-box video {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
+  .stand-wrap{position:relative;z-index:1;display:flex;justify-content:center;padding:32px 0;}
+  .stand-photo{
+    width:min(340px,85%);height:auto;display:block;
+    filter:drop-shadow(0 20px 24px rgba(20,19,16,.15));
   }
+  .stage-chip{
+    position:absolute;z-index:2;background:#fff;border:1px solid var(--line);border-radius:999px;
+    font-size:11.5px;font-weight:600;padding:7px 14px;box-shadow:0 8px 18px -6px rgba(20,19,16,.15);
+    display:flex;align-items:center;gap:6px;white-space:nowrap;
+  }
+  .chip-1{top:6%;left:0;}
+  .chip-2{bottom:8%;right:0;}
+  .chip-1 svg,.chip-2 svg{color:var(--accent);}
 
   /* Marquee */
-  .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--card);overflow:hidden;padding:14px 0;}
+  .marquee{position:relative;z-index:2;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--card);overflow:hidden;padding:14px 0;}
   .marquee-track{display:flex;gap:40px;width:max-content;animation:scroll 26s linear infinite;font-size:13px;font-weight:600;color:var(--muted);white-space:nowrap;}
   @keyframes scroll{to{transform:translateX(-50%);}}
   .marquee-track i{font-style:normal;color:var(--accent);}
@@ -425,6 +468,8 @@
     .f-grid{grid-template-columns:1fr;}
     .hero{padding:40px 0 32px;}
     section.block{padding:48px 0;}
+    .chip-1{left:4px;top:2%;}
+    .chip-2{right:4px;bottom:2%;}
     .hero-cta{flex-direction:column;}
     .hero-cta .btn{width:100%;}
     form.order{padding:18px;}
@@ -470,8 +515,15 @@
 
 <main>
 
-  <!-- HERO -->
+  <!-- HERO SEKCIJA SA POZADINSKIM VIDEO ZAPISOM -->
   <section class="hero">
+    <div class="hero-video-bg">
+      <video autoplay loop muted playsinline poster="stalak.jpg">
+        <source src="promo.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
+    </div>
+
     <div class="wrap hero-grid">
       <div>
         <span class="eyebrow"><span class="pulse"></span>NFC + QR Stalci za Google Recenzije</span>
@@ -488,12 +540,19 @@
         </div>
       </div>
 
-      <!-- PROMO VIDEO U HERO SEKTORU -->
-      <div class="hero-video-box">
-        <video autoplay loop muted playsinline poster="stalak.jpg">
-          <source src="promo.mp4" type="video/mp4">
-          Vaš pretraživač ne podržava video zapis.
-        </video>
+      <div class="stage">
+        <div class="stage-bg"></div>
+        <div class="stage-chip chip-1">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+          1 Dodir — Google Recenzija
+        </div>
+        <div class="stage-chip chip-2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          Programirano za Vas
+        </div>
+        <div class="stand-wrap">
+          <img src="stalak.jpg" alt="Akrilni NFC i QR stalak za Google recenzije Black Lux Edition" class="stand-photo" loading="eager" width="340" height="340">
+        </div>
       </div>
     </div>
   </section>
