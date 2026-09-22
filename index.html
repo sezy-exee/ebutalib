@@ -11,7 +11,7 @@
 <!-- Vercel Analytics -->
 <script defer src="/_vercel/insights/script.js"></script>
 
-<!-- CSP Security Fix: Automatski preusmjerava sve resurse na HTTPS -->
+<!-- CSP Security Fix -->
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
 <!-- Google Search Console Verification Tag -->
@@ -25,7 +25,7 @@
 <meta name="robots" content="index, follow" />
 <meta name="author" content="Lokalni Rast" />
 
-<!-- KLJUČNI TAČNI CANONICAL TAG KOJI SREĐUJE SEARCH CONSOLE -->
+<!-- CANONICAL TAG -->
 <link rel="canonical" href="https://lokalnirast.store/" />
 
 <!-- Open Graph / Facebook / WhatsApp / Viber -->
@@ -42,7 +42,7 @@
 <meta property="twitter:description" content="Skupite više 5★ Google recenzija u samo 3 sekunde. Jednokratna kupovina bez mjesečne pretplate." />
 <meta property="twitter:image" content="https://lokalnirast.store/stalak.jpg" />
 
-<!-- Schema.org Structured Data (Google Rich Snippets) -->
+<!-- Schema.org Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org/",
@@ -105,7 +105,6 @@
     overflow-x:hidden;
     width: 100%;
   }
-  .serif{font-family:'Fraunces',Georgia,serif;}
   .wrap{max-width:1120px;margin:0 auto;padding:0 24px;width:100%;}
   a{color:inherit;text-decoration:none;}
 
@@ -122,7 +121,7 @@
   /* Header */
   header{
     position:sticky;top:0;z-index:50;
-    background:rgba(250,249,246,.88);
+    background:rgba(250,249,246,.92);
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
   }
@@ -137,8 +136,8 @@
   }
   .btn-dark{background:var(--ink);color:#fff;}
   .btn-dark:hover{background:#2B2924;}
-  .btn-ghost{border-color:var(--line);color:var(--ink);background:transparent;}
-  .btn-ghost:hover{border-color:var(--ink);}
+  .btn-ghost{border-color:var(--line);color:var(--ink);background:rgba(255,255,255,0.8);}
+  .btn-ghost:hover{border-color:var(--ink);background:#fff;}
   .btn-green{background:var(--accent);color:#fff;}
   .btn-green:hover{background:var(--accent-ink);}
 
@@ -168,18 +167,17 @@
     width: 100%;
   }
 
-  /* Hero Section sa video pozadinom */
-  .hero{
+  /* Hero Section sa Pozadinskim Videom */
+  .hero {
     position: relative;
-    padding: 64px 0 64px;
+    padding: 64px 0;
+    background: var(--bg);
     overflow: hidden;
   }
 
-  /* Kontejner za pozadinski video */
   .hero-video-bg {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     z-index: 0;
@@ -190,29 +188,29 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: blur(8px) brightness(0.88);
-    transform: scale(1.05); /* Sprečava mutne ivice od blura */
+    opacity: 0.35; /* Blagi prolaz svjetla bez agresivnog zamućenja */
   }
 
   .hero-video-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(250, 249, 246, 0.72);
+    background: linear-gradient(to right, rgba(250,249,246,0.92) 30%, rgba(250,249,246,0.65) 100%);
   }
 
-  .hero-grid{
+  .hero-grid {
     position: relative;
     z-index: 1;
-    display:grid;
-    grid-template-columns:1.05fr .95fr;
-    gap:48px;
-    align-items:center;
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 48px;
+    align-items: center;
   }
+
   .eyebrow{
     display:inline-flex;align-items:center;gap:8px;
     font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
     color:var(--accent-ink);
-    border:1px solid #CDE7D7;background:rgba(234,245,239,0.9);
+    border:1px solid #CDE7D7;background:rgba(234,245,239,0.95);
     padding:7px 14px;border-radius:999px;margin-bottom:20px;
   }
   .eyebrow .pulse{width:7px;height:7px;border-radius:50%;background:var(--accent);}
@@ -515,10 +513,10 @@
 
 <main>
 
-  <!-- HERO SEKCIJA SA POZADINSKIM VIDEO ZAPISOM -->
+  <!-- HERO SEKCIJA S VIDEO POZADINOM -->
   <section class="hero">
     <div class="hero-video-bg">
-      <video autoplay loop muted playsinline poster="stalak.jpg">
+      <video autoplay loop muted playsinline preload="auto" poster="stalak.jpg">
         <source src="promo.mp4" type="video/mp4">
       </video>
       <div class="hero-video-overlay"></div>
@@ -820,7 +818,7 @@
     });
   });
 
-  // Precizan Toggle za kontakt dugme na klik i hover iznad samog dugmeta
+  // Toggle za kontakt dugme
   const contactMenu = document.getElementById('contactMenu');
   const contactMainBtn = document.getElementById('contactMainBtn');
 
