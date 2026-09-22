@@ -19,7 +19,7 @@
 <!-- Google Search Console Verification Tag -->
 <meta name="google-site-verification" content="jHWInlXjwUQIKl4X3157wR3G9X0O_f2_4I6fXv6_s80" />
 
-<!-- NOVI UDARNI GOOGLE TITLE & META TAGOVI -->
+<!-- GOOGLE TITLE & META TAGOVI -->
 <title>Lokalni Rast — Više Google Recenzija = Više Klijenata</title>
 <meta name="title" content="Lokalni Rast — Više Google Recenzija = Više Klijenata" />
 <meta name="description" content="Privucite stotine pozitivnih 5★ Google recenzija u samo 3 sekunde. Pametni akrilni stalci sa NFC čipom i QR kodom za kafiće, restorane i salone. Jednokratna kupovina 35 KM, bez pretplate!" />
@@ -44,7 +44,7 @@
 <meta property="twitter:description" content="Skupite više 5★ Google recenzija u samo 3 sekunde. Jednokratna kupovina bez mjesečne pretplate." />
 <meta property="twitter:image" content="https://lokalnirast.store/stalak.jpg" />
 
-<!-- Schema.org Structured Data -->
+<!-- Schema.org Structured Data (Potpuno popravljen za Merchant Listings) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org/",
@@ -66,11 +66,47 @@
     "priceCurrency": "BAM",
     "price": "35.00",
     "priceValidUntil": "2027-12-31",
+    "validFrom": "2026-01-01",
     "itemCondition": "https://schema.org/NewCondition",
     "availability": "https://schema.org/InStock",
     "seller": {
       "@type": "Organization",
       "name": "Lokalni Rast"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "9.00",
+        "currency": "BAM"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "BA"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 1,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 2,
+          "unitCode": "DAY"
+        }
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "BA",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 14,
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/FreeReturn"
     }
   },
   "aggregateRating": {
@@ -503,13 +539,11 @@
   </div>
 </header>
 
-<!-- AUDIO PLEJER NA VRHU -->
+<!-- AUDIO PLEJER SA PLAYLISTOM (pjesma1, pjesma2, pjesma3) -->
 <div class="top-audio-bar">
   <div class="wrap top-audio-inner">
     <span>🎵 Slušajte pozadinsku muziku dok pregledate:</span>
-    <audio controls loop src="pjesma.mp3">
-      <source src="pjesma.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="bgAudio" controls src="pjesma.mp3"></audio>
   </div>
 </div>
 
@@ -838,6 +872,24 @@
       if (!contactMenu.contains(e.target)) {
         contactMenu.classList.remove('active');
       }
+    });
+  }
+
+  // AUTOMATSKA ROTACIJA ZVUČNIH ZAPISA (PLAYLIST)
+  const playlist = [
+    "pjesma.mp3",
+    "pjesma2.mp3",
+    "pjesma3.mp3"
+  ];
+  
+  let currentTrack = 0;
+  const audio = document.getElementById('bgAudio');
+
+  if (audio) {
+    audio.addEventListener('ended', function() {
+      currentTrack = (currentTrack + 1) % playlist.length;
+      audio.src = playlist[currentTrack];
+      audio.play();
     });
   }
 </script>
